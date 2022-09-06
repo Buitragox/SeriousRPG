@@ -1,0 +1,193 @@
+{
+    "template": {
+        "name": "template",
+        "story": [
+            ["texto", "sonido"]
+            
+        ],
+        "menu_text": [
+
+        ],
+        "menu_action": [
+
+        ],
+        "boss": ""
+    },
+    "Pradera": {
+        "name": "Pradera",
+        "story": [
+            ["Eres un universitario normal, teniendo un pésimo día, como siempre.", "caminata"],
+            ["Los pájaros cantan", "aves"],
+            ["la brisa es fresca… y … ", "brisas"],
+            ["Acabas de estornudar y eres teletransportado a Colombia", "estornudo"],
+            ["Vaya, parece que tendrás que sobrevivir ahora.", ""],
+            ["...¿Qué es lo primero que te sucederá en esta gran aventura?", "brayan"],
+            ["Tu: Egg parce, ando como perdido en esta pradera", ""],
+            ["Oh, ¿qué es eso? ¿Un bandido? Diosito me van a robar", ""],
+            ["Ladrón: Socio, ¿usted tiene la hora? Esas zapas estan como bonitas!", ""],
+            ["Tu: Egg figuró darme con esta loca. Es hora de agarrarse a madrazos.", ""]
+        ],
+        "menu_text": [
+            "Enfrentarse"
+        ],
+        "menu_action": [
+            ["FIGHT", "palmira"]
+        ],
+        "boss": "ladron"
+    },
+    "praderaTEST": {
+        "name": "pradera",
+        "story": [
+
+        ],
+        "menu_text": [
+            "Enfrentarse"
+        ],
+        "menu_action": [
+            ["FIGHT", "palmira"]
+        ],
+        "boss": "ladron"
+    },
+    "palmira": {
+        "name": "palmira",
+        "story": [
+            ["Has ganado el combate, sales vivo de la pradera, llegas vivo de milagro a un pequeño pueblo llamado palmira.", ""]
+        ],
+        "menu_text": [
+            "Descansar (Recuperar corazones)",
+            "Seguir adelante (El que tenga miedo a morir que no nazca",
+            "Nada (no sirve de nada literalmente)"
+        ],
+        "menu_action": [
+            ["HEAL", ""],
+            ["MOVE", "teletransporte"],
+            ["NOTHING", ""]
+        ],
+        "boss": ""
+    },
+    "teletransporte": {
+        "name": "teletransporte",
+        "story": [
+            ["Estás en el sitio de teletransportes preparandote para tu próxima aventura", ""]
+        ],
+        "menu_text": [
+            "Viajas a los años 80-90s",
+            "Viajas a los 2000"
+        ],
+        "menu_action": [
+            ["MOVE", "Cali"],
+            ["MOVE", "Urabá"]
+        ],
+        "boss": ""
+    },
+    "Cali": {
+        "name": "Cali",
+        "story": [
+            ["Empiezas a caminar por una ciudad llamada Cali, es una ciudad muy hermosa, con bellas vistas y buena música (Suena grupo niche)", "niche"],
+            ["cuando de pronto una explosión, decides caminar un par de metros y ves a alguien tirado en el suelo aún vivo.", "explosion"]
+        ],
+        "menu_text": [
+            "Salvar a la persona herida",
+            "Correr por tu vida"
+        ],
+        "menu_action": [
+            ["MOVE", "Barrio"],
+            ["MOVE", "Bogotá"]
+        ],
+        "boss": ""
+    },
+    "Barrio": {
+        "name": "Barrio",
+        "story": [
+            ["Voy a hacerle tratamiento médico señor, quedese quieto", ""],
+            ["...(Realizando tratamiento)", "curar"],
+            ["(Sonidos de personas llegando) Mira ve, que bonito este ve, salvando a esta basura de politico", "caminar"],
+            ["(Miras atras para toparte con una triste realidad,", ""],
+            ["has sido fijado como Objetivo Militar", "objetivo"],
+            ["por los hermanos orejuela del cartel de cali por salvar a un importante político", "hermanitos"],
+            ["Diosito si no te los llevas, yo te los mando (preparandote para la pelea)", ""]
+        ],
+        "menu_text": [
+            "Enfrentarse"
+        ],
+        "menu_action": [
+            ["FIGHT", "Bogotá"]
+        ],
+        "boss": "hermanos"
+    },
+    "Urabá": {
+        "name": "Urabá",
+        "story": [
+            ["Apareciste en algún lugar del Urabá,ya llevas 3 semanas desde que apareciste", ""],
+            [" y se te olvido que debes completar la misión de exterminar a los malos,", ""],
+            ["por eso decidiste ser un campesino para vivir una vida tranquila,", ""],
+            [" lo que no contaba es que en el lugar en el que te encuentras existe presencia de las auc", ""],
+            ["...Pasan los días", ""],
+            ["Te encuentras tomando pola con tus compañeros","cantina"],
+            ["cuando de pronto escuchas el sonido de un fusil", "sonidoBala"],
+            ["son los paramilitares ohhhh diosssssssssss mio me llevo el que me trajo.", "sonidoAUC"],
+            ["Apareció Carlos Castaño para asesinar a los desconocidos del área,", ""],
+            ["no quiere espías por su zona. Nota: ¡Llevas 3 semanas, eres un desconocido(Prepárate para luchar)!", ""]
+        ],
+        "menu_text": [
+            "Enfrentarse"
+        ],
+        "menu_action": [
+            ["FIGHT", "Bogotá"]
+        ],
+        "boss": "AUC"
+    },
+    "Bogotá": {
+        "name": "Bogotá",
+        "story": [
+            ["Ganaste. Has sido teletransportado a Bogotá una ciudad muy horrible.", ""]
+        ],
+        "menu_text": [
+            "Descansar",
+            "Seguir adelante (El que tenga miedo a morir que no nazca)",
+            "Nada (no sirve de nada literalmente)",
+            "Comer changua"
+        ],
+        "menu_action": [
+            ["HEAL", ""],
+            ["MOVE", "Uribito"],
+            ["NOTHING", ""],
+            ["DEAD", ""]
+        ],
+        "boss": ""
+    },
+    "Uribito": {
+        "name": "Uribito",
+        "story": [
+            ["Mientras tomas un respiro en la posada los helechos...", ""],
+            ["Te llega una carta de desafío del jefe final y decides luchar.", ""],
+            ["Pasan las horas y te presentas en el lugar de encuentro,", ""],
+            ["cuando de repente aparece un señor con apellido Uribe.", "uribito"],
+            ["(Estamos en Colombia, porque no me sorprende que sea un señor con este nombre).", ""],
+            ["Uribe esta prendiendo la motosierra (Preparate para luchar)", "motosierra"]
+        ],
+        "menu_text": [
+            "Enfrentarse"
+        ],
+        "menu_action": [
+            ["FIGHT", "victoria"]
+        ],
+        "boss": "Uribito"
+    },
+    "victoria": {
+        "name": "victoria",
+        "story": [
+            ["El señor Uribe te permite irte del país todo pago solo te dice que descanses en el vuelo que tomaste luego de pelear,", ""],
+            ["te quedas profundamente dormido(sueñas algo muy bonito ya que dejas un país de miseria).", ""],
+            ["Al otro día cuando el avión aterriza te das cuenta del trágico final y que no todo es color de rosas,", ""],
+            ["terminaste en tráfico de blancas en Marruecos (Dios te ha abandonado, hahaha funny).", ""],
+            ["CONTINUARÁ", ""]
+        ],
+        "menu_text": [
+            ""
+        ],
+        "menu_action": [
+        ],
+        "boss": ""
+    }
+}

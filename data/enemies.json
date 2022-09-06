@@ -1,0 +1,45 @@
+{
+    "ladron" : {
+        "name" : "Brayayin",
+        "max_cringe": 3,
+        "attack_msgs": [
+            "Brayayin acaba de lanzar navajazo, prepárate para esquivar!!!",
+            "Chuzo al pecho"
+        ],
+        "entry_track": "brayan",
+        "fight_track": "pelea"
+    },
+    "hermanos" : {
+        "name" : "Hermanos Orejuela",
+        "max_cringe": 3,
+        "attack_msgs": [
+            "Carro bomba activado!!!",
+            "Fusilamiento doble",
+            "Tortura"
+        ],
+        "entry_track": "brayan",
+        "fight_track": "pelea"
+    },
+    "AUC" : {
+        "name" : "AUC",
+        "max_cringe": 3,
+        "attack_msgs": [
+            "Fusilamiento activo",
+            "Secuestro",
+            "Corre, el sicario viene por ti"
+        ],
+        "entry_track": "sonidoAUC",
+        "fight_track": "pelea"
+    },
+    "Uribito" : {
+        "name" : "Uribito",
+        "max_cringe": 5,
+        "attack_msgs": [
+            "Queridos hermanosss, muevan al ejercito",
+            "Motosierra doble",
+            "Aplastar con los caballos"
+        ],
+        "entry_track": "uribito",
+        "fight_track": "pelea"
+    }
+}
