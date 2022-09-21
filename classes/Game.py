@@ -1,3 +1,4 @@
+from re import X
 from classes.Enemy import Enemy
 from classes.Loader import Loader
 from classes.Player import Player
@@ -9,11 +10,12 @@ from pynput import keyboard as kb
 from random import random
 from openal import *
 from colorama import Fore, Back, Style
+from random import choice
 
 MIN_PLAY_TIME = 2.5
 MAX_PLAY_TIME = 5.0
-VALID_DODGE_TIME = 1.0
-START_ROOM = "pradera"
+VALID_DODGE_TIME = 1.5
+START_ROOM = "praderaTEST"
 
 class Game:
     def __init__(self) -> None:
@@ -23,6 +25,7 @@ class Game:
         self.rooms = Loader.load_rooms()
         self.current_room = ""
         self.pressed_dodge = False
+        self.pressed_key : kb.Key = None
         stdout.reconfigure(encoding='utf-8')
    
 
@@ -108,6 +111,7 @@ class Game:
     def press(self, key):
         """Function used by the keyboard listener to register when the keyboard is pressed"""
         self.pressed_dodge = True
+        self.pressed_key = key
 
     
     def dodge(self) -> bool:
@@ -115,18 +119,21 @@ class Game:
 
         play_time = MIN_PLAY_TIME + (random() * (MAX_PLAY_TIME - MIN_PLAY_TIME))
         success = False
-        sound = self.sounds["sonidoAtaque"]
+        sound = self.sounds["sonidoAtaqueB"]
+        x = choice([-2.0, 2.0])
+        sound.set_position([x, 1, 1])
         sound_played = False
         sound_time = 0 #Start time of playing the sound
         pressed_time = 0 #Start time of pressing the key
         start_time = time.time() #Start time of event
         self.pressed_dodge = False
+        self.pressed_key = None
         with kb.Listener(self.press) as listener:
             while not self.pressed_dodge:
                 if time.time() - start_time > play_time and not sound_played:
                     sound_played = True
                     sound_time = time.time()
-                    sound.set_gain(0.7)
+                    sound.set_gain(0.9)
                     sound.play()
             pressed_time = time.time()
             listener.stop()
@@ -134,8 +141,12 @@ class Game:
         if not sound_played:
             self.slow_print("Demasiado rápido", mods=Fore.YELLOW)
         elif pressed_time - sound_time <= VALID_DODGE_TIME:
-            self.slow_print("Perfecto", mods=Fore.GREEN)
-            success = True
+            if x > 0 and self.pressed_key == kb.Key.left or \
+               x < 0 and self.pressed_key == kb.Key.right:
+                self.slow_print("Perfecto", mods=Fore.GREEN)
+                success = True
+            else:
+                self.slow_print("Te lanzaste hacia el ataque enemigo, mala idea", mods=Fore.YELLOW)
         else:
             self.slow_print("Demasiado tarde", mods=Fore.YELLOW)
 
@@ -227,7 +238,7 @@ class Game:
             self.slow_print("El enemigo se esta preparando para atacar")
             self.slow_print(enemy.select_msg())
 
-            self.slow_print("Presiona ESPACIO cuando suene el ataque.\nPresiona Enter cuando estes listo ...")
+            self.slow_print("Esquiva hacia el lado contrario al ataque.\nPresiona Enter cuando estes listo ...")
             input()
             self.slow_print("ATENTO!", delay=0, mods=Back.YELLOW)
             success = self.dodge()
