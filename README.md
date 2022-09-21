@@ -1,6 +1,7 @@
+
 # Un RPG Muy Colombiano
 ---
-Un juego satírico con el proposito de entretener.
+Un juego satírico con el propósito de entretener.
 
 Creado por:
 - Jhoan Manuel Buitrago Chavez
@@ -13,20 +14,17 @@ Curso: Sistemas de Interacción
 ## Requerimientos
 
 1. Tener Python 3, se requiere una versión mayor a la 3.5.
-    - Este juego fue probado en python 3.9, otras versiones podrían no funcionar
 
-2. Tener el modulo pynput
+2. Tener el módulo pynput
    - Instalación: 'pip install pynput'
  
-3. Tener el modulo PyOpenAL
+3. Tener el módulo PyOpenAL
    - Instalación: 'pip install PyOpenAL'
 
-4. Tener el modulo Colorama
+4. Tener el módulo Colorama
    - Instalación: 'pip install Colorama'
-  
-Nota 1: Este juego fue probado en Windows 10, otros sistemas operativos podrían no funcionar.
 
-Nota 2: El comando pip se usa en la consola, y requiere tener instalado Python.
+Nota: El comando pip se usa en la consola, y requiere tener instalado Python.
 
 ## Cómo Ejecutar el Juego
 
@@ -34,7 +32,7 @@ Nota 2: El comando pip se usa en la consola, y requiere tener instalado Python.
 
 2. Extraer la carpeta.
    
-3. Abrir una terminal y navegar hasta la carpeta donde se encuentra el juego.
+3. Abrir una terminal y navegar hasta la carpeta donde se encuentran los archivos del juego.
 
 4. Ejecutar el juego ingresando "Python main.py" en la terminal.
 
@@ -42,6 +40,9 @@ Nota 2: El comando pip se usa en la consola, y requiere tener instalado Python.
 
 El juego tiene un sistema de batalla RPG, donde tanto el jugador como el enemigo tienen un turno. 
 
-El jugador en su turno podra seleccionar una de las opciones del menu, donde algunas de estas tendran un porcentaje de exito. El juego no muesta la vida de tu oponente, sigue atacando hasta derrotarlo.
+El jugador en su turno podrá seleccionar una de las opciones del menú, donde algunas de estas tendrán un porcentaje de éxito. El juego no muestra la vida de tu oponente, sigue intentando hasta derrotarlo.
 
-En el turno del enemigo tendras que esquivar un ataque. Presiona cualquier tecla para esquivar cuando escuches el sonido de ataque. Esquivar demasiado tarde, o demasiado rápido causara que recibas daño.
+En el turno del enemigo tendrás que esquivar un ataque. Después de una cantidad de tiempo aleatoria sonará una espada, usando las teclas de flecha izquierda o flecha derecha deberás esquivar en la dirección **contraria** de donde provenga el sonido. Esquivar demasiado tarde, demasiado rápido o usando la tecla equivocada causará que recibas daño.
+
+**Se recomienda el uso de audífonos.**
+
