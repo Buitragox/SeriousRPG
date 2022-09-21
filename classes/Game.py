@@ -1,4 +1,3 @@
-from tracemalloc import start
 from classes.Enemy import Enemy
 from classes.Loader import Loader
 from classes.Player import Player
@@ -9,6 +8,7 @@ import time
 from pynput import keyboard as kb
 from random import random
 from openal import *
+from colorama import Fore, Back, Style
 
 MIN_PLAY_TIME = 3.0
 MAX_PLAY_TIME = 5.0
@@ -30,12 +30,14 @@ class Game:
         # TODO musica de entrada ??
         self.slow_print("BIENVENIDO A ...")
         time.sleep(2)
-        self.slow_print("UN RPG MUY COLOMBIANO")
-
+        #self.slow_print("UN RPG MUY COLOMBIANO")
+        self.slow_print("UN RPG MUY ", "", mods=Back.YELLOW)
+        self.slow_print("COLOM", "", mods=Back.BLUE)
+        self.slow_print("BIANO", mods=Back.RED)
         try:
             valid_name = False
             while not valid_name:
-                self.slow_print("Ingresa tu nombre: ", "")
+                self.slow_print("Ingresa tu nombre: ", "", mods=Fore.RED)
                 name = input()
                 valid_name = self.player.set_name(name)
                 if not valid_name:
@@ -49,18 +51,19 @@ class Game:
         except Exception as e:
             print("Ha ocurrido un error:", e)       
             
-        
+    
     @staticmethod
-    def slow_print(text="", end = "\n", delay= 0.01) -> None:
-        for c in text:      
+    def slow_print(text="", end="\n", delay=0.01, mods="") -> None:
+        stdout.write(mods)
+        for c in text: 
             stdout.write(c) 
             stdout.flush()
             time.sleep(delay)
-        stdout.write(end) 
+        stdout.write(Style.RESET_ALL + end) 
         stdout.flush()
 
 
-    def play_story(self, room_key : str) -> None:
+    def play_story(self, room_key: str) -> None:
         room = self.rooms[room_key]
         for text, sound in room.story:
             if sound != "" and sound in self.sounds:
@@ -76,7 +79,7 @@ class Game:
         valid_option = False
         opc = 0
         while not valid_option:
-            self.slow_print("¿Qué deseas hacer?")
+            self.slow_print(question)
             for i, text in enumerate(options):
                 print(f"{i}. ", end="")
                 self.slow_print(text)
@@ -170,7 +173,7 @@ class Game:
                     victory = True
                     break
                 else:
-                    print("Tu enemigo esta furioso, maravillosa jugada")
+                    self.slow_print("Tu enemigo esta furioso, maravillosa jugada")
 
             elif opc == 1:
                 if self.player.joke():

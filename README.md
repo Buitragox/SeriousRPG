@@ -28,5 +28,4 @@ El juego tiene un sistema de batalla RPG, donde tanto el jugador como el enemigo
 
 El jugador en su turno podra seleccionar una de las opciones del menu, donde algunas de estas tendran un porcentaje de exito. El juego no muesta la vida de tu oponente, sigue atacando hasta derrotarlo.
 
-En el turno del enemigo tendras que esquivar un ataque. Presiona cualquier tecla para esquivar cuando escuches el sonido de ataque.
-Esquivar demasiado tarde, o demasiado rápido causara que recibas daño.
+En el turno del enemigo tendras que esquivar un ataque. Presiona cualquier tecla para esquivar cuando escuches el sonido de ataque. Esquivar demasiado tarde, o demasiado rápido causara que recibas daño.
