@@ -12,7 +12,7 @@ Curso: Sistemas de Interacción
 
 ## Requerimientos
 
-1. Tener Python 3 
+1. Tener Python 3, se requiere una versión mayor a la 3.5.
     - Este juego fue probado en python 3.9, otras versiones podrían no funcionar
 
 2. Tener el modulo pynput

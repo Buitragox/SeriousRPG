@@ -13,7 +13,7 @@ from colorama import Fore, Back, Style
 MIN_PLAY_TIME = 2.5
 MAX_PLAY_TIME = 5.0
 VALID_DODGE_TIME = 1.0
-START_ROOM = "Pradera"
+START_ROOM = "victoria"
 
 class Game:
     def __init__(self) -> None:
@@ -44,6 +44,9 @@ class Game:
                     self.slow_print("¿Se le olvido como escribir?")
             self.current_room = START_ROOM
             self.game_loop()
+            self.slow_print("Gracias por jugar!", mods=Fore.GREEN)
+            self.slow_print("Presiona Enter para salir...",  mods=Fore.GREEN)
+            input()
 
         except KeyboardInterrupt:
             print("\nEjecución detenida\n") 
