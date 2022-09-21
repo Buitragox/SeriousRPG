@@ -31,11 +31,11 @@
             "Enfrentarse"
         ],
         "menu_action": [
-            ["FIGHT", "palmira"]
+            ["FIGHT", "Palmira"]
         ],
         "boss": "ladron"
     },
-    "praderaTEST": {
+    "PraderaTEST": {
         "name": "pradera",
         "story": [
 
@@ -44,12 +44,12 @@
             "Enfrentarse"
         ],
         "menu_action": [
-            ["FIGHT", "palmira"]
+            ["FIGHT", "Palmira"]
         ],
         "boss": "ladron"
     },
-    "palmira": {
-        "name": "palmira",
+    "Palmira": {
+        "name": "Palmira",
         "story": [
             ["Has ganado el combate, sales vivo de la pradera, llegas vivo de milagro a un pequeño pueblo llamado palmira.", ""]
         ],
@@ -60,13 +60,13 @@
         ],
         "menu_action": [
             ["HEAL", ""],
-            ["MOVE", "teletransporte"],
+            ["MOVE", "Teletransporte"],
             ["NOTHING", ""]
         ],
         "boss": ""
     },
-    "teletransporte": {
-        "name": "teletransporte",
+    "Teletransporte": {
+        "name": "Teletransporte",
         "story": [
             ["Estás en el sitio de teletransportes preparandote para tu próxima aventura.", ""]
         ],
@@ -140,7 +140,7 @@
     "Bogotá": {
         "name": "Bogotá",
         "story": [
-            ["Ganaste. Has sido teletransportado a Bogotá una ciudad muy horrible.", ""]
+            ["Has sido teletransportado a Bogotá una ciudad muy horrible.", ""]
         ],
         "menu_text": [
             "Descansar",
@@ -170,12 +170,12 @@
             "Enfrentarse"
         ],
         "menu_action": [
-            ["FIGHT", "victoria"]
+            ["FIGHT", "Victoria"]
         ],
         "boss": "Uribito"
     },
-    "victoria": {
-        "name": "victoria",
+    "Victoria": {
+        "name": "Victoria",
         "story": [
             ["El señor Uribe te permite irte del país todo pago solo te dice que descanses en el vuelo que tomaste luego de pelear,", ""],
             ["te quedas profundamente dormido (sueñas algo muy bonito ya que dejas un país de miseria).", ""],
