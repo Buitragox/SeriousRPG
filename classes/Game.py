@@ -245,7 +245,7 @@ class Game:
 
     def game_loop(self) -> None:
         """Main function of the class, handles the game loop"""
-        
+
         self.slow_print("========================")
         victory = False
         new_room = True
@@ -267,8 +267,7 @@ class Game:
 
             elif action[0] == RoomAction.HEAL.name:
                 self.slow_print("Te has recuperado")
-                self.player.hp = 3
-                input()
+                self.player.hp = self.player.max_hp
 
             elif action[0] == RoomAction.MOVE.name:
                 next_room = action[1]
