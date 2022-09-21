@@ -24,9 +24,21 @@ Curso: Sistemas de Interacción
 4. Tener el modulo Colorama
    - Instalación: 'pip install Colorama'
   
-Nota: Este juego fue probado en Windows 10, otros sistemas operativos podrían no funcionar.
+Nota 1: Este juego fue probado en Windows 10, otros sistemas operativos podrían no funcionar.
 
-## Instrucciones de juego
+Nota 2: El comando pip se usa en la consola, y requiere tener instalado Python.
+
+## Cómo Ejecutar el Juego
+
+1. Descargar el .zip del repositorio.
+
+2. Extraer la carpeta.
+   
+3. Abrir una terminal y navegar hasta la carpeta donde se encuentra el juego.
+
+4. Ejecutar el juego ingresando "Python main.py" en la terminal.
+
+## Instrucciones de Juego
 
 El juego tiene un sistema de batalla RPG, donde tanto el jugador como el enemigo tienen un turno. 
 

@@ -28,13 +28,12 @@ class Game:
 
     def start(self) -> None:
         """Start of the game, ask for player name and call game_loop"""
-
-        self.slow_print("BIENVENIDO A", "")
-        self.slow_print(" ...", delay=0.5)
-        self.slow_print("UN RPG MUY ", "", mods=Back.YELLOW)
-        self.slow_print("COLOM", "", mods=Back.BLUE)
-        self.slow_print("BIANO", mods=Back.RED)
         try:
+            self.slow_print("BIENVENIDO A", "")
+            self.slow_print(" ...", delay=0.5)
+            self.slow_print("UN RPG MUY ", "", mods=Back.YELLOW)
+            self.slow_print("COLOM", "", mods=Back.BLUE)
+            self.slow_print("BIANO", mods=Back.RED)
             valid_name = False
             while not valid_name:
                 self.slow_print("Ingresa tu nombre: ", "", mods=Fore.RED)
