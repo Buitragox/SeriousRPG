@@ -13,7 +13,7 @@ from colorama import Fore, Back, Style
 MIN_PLAY_TIME = 2.5
 MAX_PLAY_TIME = 5.0
 VALID_DODGE_TIME = 1.0
-START_ROOM = "victoria"
+START_ROOM = "pradera"
 
 class Game:
     def __init__(self) -> None:
