@@ -15,7 +15,7 @@ from random import choice
 MIN_PLAY_TIME = 2.5
 MAX_PLAY_TIME = 5.0
 VALID_DODGE_TIME = 1.5
-START_ROOM = "praderaTEST"
+START_ROOM = "pradera"
 
 class Game:
     def __init__(self) -> None:
