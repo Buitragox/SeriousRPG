@@ -22,8 +22,8 @@
             ["Acabas de estornudar y eres teletransportado a Colombia", "estornudo"],
             ["Vaya, parece que tendrás que sobrevivir ahora.", ""],
             ["...¿Qué es lo primero que te sucederá en esta gran aventura?", "brayan"],
-            ["Tu: Egg parce, ando como perdido en esta pradera", ""],
-            ["Oh, ¿qué es eso? ¿Un bandido? Diosito me van a robar", ""],
+            ["Tu: Egg parce, ando como perdido en esta pradera.", ""],
+            ["Oh, ¿qué es eso? ¿Un bandido? Diosito me van a robar.", ""],
             ["Ladrón: Socio, ¿usted tiene la hora? Esas zapas estan como bonitas!", ""],
             ["Tu: Egg figuró darme con esta loca. Es hora de agarrarse a madrazos.", ""]
         ],
@@ -68,7 +68,7 @@
     "teletransporte": {
         "name": "teletransporte",
         "story": [
-            ["Estás en el sitio de teletransportes preparandote para tu próxima aventura", ""]
+            ["Estás en el sitio de teletransportes preparandote para tu próxima aventura.", ""]
         ],
         "menu_text": [
             "Viajas a los años 80-90s",
@@ -83,7 +83,7 @@
     "Cali": {
         "name": "Cali",
         "story": [
-            ["Empiezas a caminar por una ciudad llamada Cali, es una ciudad muy hermosa, con bellas vistas y buena música (Suena grupo niche)", "niche"],
+            ["Empiezas a caminar por una ciudad llamada Cali, es una ciudad muy hermosa, con bellas vistas y buena música (Suena grupo niche).", "niche"],
             ["cuando de pronto una explosión, decides caminar un par de metros y ves a alguien tirado en el suelo aún vivo.", "explosion"]
         ],
         "menu_text": [
@@ -99,12 +99,12 @@
     "Barrio": {
         "name": "Barrio",
         "story": [
-            ["Voy a hacerle tratamiento médico señor, quedese quieto", ""],
+            ["Voy a hacerle tratamiento médico señor, quedese quieto.", ""],
             ["...(Realizando tratamiento)", "curar"],
-            ["(Sonidos de personas llegando) Mira ve, que bonito este ve, salvando a esta basura de politico", "caminar"],
-            ["(Miras atras para toparte con una triste realidad,", ""],
-            ["has sido fijado como Objetivo Militar", "objetivo"],
-            ["por los hermanos orejuela del cartel de cali por salvar a un importante político", "hermanitos"],
+            ["El público: Mira ve, que bonito este ve, salvando a esta basura de politico.", "caminar"],
+            ["(Miras atras para toparte con una triste realidad)", ""],
+            ["Has sido fijado como Objetivo Militar", "objetivo"],
+            ["por los hermanos orejuela del cartel de cali por salvar a un importante político.", "hermanitos"],
             ["Diosito si no te los llevas, yo te los mando (preparandote para la pelea)", ""]
         ],
         "menu_text": [
@@ -119,15 +119,15 @@
         "name": "Urabá",
         "story": [
             ["Apareciste en algún lugar del Urabá,ya llevas 3 semanas desde que apareciste", ""],
-            [" y se te olvido que debes completar la misión de exterminar a los malos,", ""],
+            ["y se te olvido que debes completar la misión de exterminar a los malos,", ""],
             ["por eso decidiste ser un campesino para vivir una vida tranquila,", ""],
-            [" lo que no contaba es que en el lugar en el que te encuentras existe presencia de las auc", ""],
-            ["...Pasan los días", ""],
-            ["Te encuentras tomando pola con tus compañeros","cantina"],
+            ["lo que no contabas es que en el lugar en el que te encuentras existe presencia de las AUC.", ""],
+            ["Pasan los días...", ""],
+            ["Te encuentras tomando pola con tus compañeros...","cantina"],
             ["cuando de pronto escuchas el sonido de un fusil", "sonidoBala"],
             ["son los paramilitares ohhhh diosssssssssss mio me llevo el que me trajo.", "sonidoAUC"],
             ["Apareció Carlos Castaño para asesinar a los desconocidos del área,", ""],
-            ["no quiere espías por su zona. Nota: ¡Llevas 3 semanas, eres un desconocido(Prepárate para luchar)!", ""]
+            ["no quiere espías por su zona. Nota: ¡Llevas 3 semanas, eres un desconocido! (Prepárate para luchar)", ""]
         ],
         "menu_text": [
             "Enfrentarse"
@@ -180,7 +180,7 @@
             ["El señor Uribe te permite irte del país todo pago solo te dice que descanses en el vuelo que tomaste luego de pelear,", ""],
             ["te quedas profundamente dormido(sueñas algo muy bonito ya que dejas un país de miseria).", ""],
             ["Al otro día cuando el avión aterriza te das cuenta del trágico final y que no todo es color de rosas,", ""],
-            ["terminaste en tráfico de blancas en Marruecos (Dios te ha abandonado, hahaha funny).", ""],
+            ["terminaste en tráfico de blancas en Marruecos (Dios te ha abandonado, haha funny).", ""],
             ["CONTINUARÁ", ""]
         ],
         "menu_text": [

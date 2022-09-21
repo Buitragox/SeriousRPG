@@ -10,7 +10,7 @@ from random import random
 from openal import *
 from colorama import Fore, Back, Style
 
-MIN_PLAY_TIME = 3.0
+MIN_PLAY_TIME = 2.5
 MAX_PLAY_TIME = 5.0
 VALID_DODGE_TIME = 1.0
 START_ROOM = "Pradera"
@@ -27,10 +27,10 @@ class Game:
    
 
     def start(self) -> None:
-        # TODO musica de entrada ??
-        self.slow_print("BIENVENIDO A ...")
-        time.sleep(2)
-        #self.slow_print("UN RPG MUY COLOMBIANO")
+        """Start of the game, ask for player name and call game_loop"""
+
+        self.slow_print("BIENVENIDO A", "")
+        self.slow_print(" ...", delay=0.5)
         self.slow_print("UN RPG MUY ", "", mods=Back.YELLOW)
         self.slow_print("COLOM", "", mods=Back.BLUE)
         self.slow_print("BIANO", mods=Back.RED)
@@ -51,9 +51,10 @@ class Game:
         except Exception as e:
             print("Ha ocurrido un error:", e)       
             
-    
+
     @staticmethod
     def slow_print(text="", end="\n", delay=0.01, mods="") -> None:
+        """Personalized print function, adds per char delay and color functionality"""
         stdout.write(mods)
         for c in text: 
             stdout.write(c) 
@@ -64,6 +65,8 @@ class Game:
 
 
     def play_story(self, room_key: str) -> None:
+        """Prints the story of a room"""
+
         room = self.rooms[room_key]
         for text, sound in room.story:
             if sound != "" and sound in self.sounds:
@@ -74,12 +77,14 @@ class Game:
 
 
     def option_menu(self, question = "", options = [], cheats = []) -> int:
+        """Prints the menu of a room"""
+
         if len(options) == 0:
             raise RuntimeError("Menu de opciones vacío")
         valid_option = False
         opc = 0
         while not valid_option:
-            self.slow_print(question)
+            self.slow_print(question, mods=Fore.LIGHTCYAN_EX)
             for i, text in enumerate(options):
                 print(f"{i}. ", end="")
                 self.slow_print(text)
@@ -94,15 +99,18 @@ class Game:
                 raise KeyboardInterrupt()
             except Exception:
                 self.slow_print("Ingresa una opción valida, no es tan difícil...")
-        
+        print()
         return opc
 
 
     def press(self, key):
+        """Function used by the keyboard listener to register when the keyboard is pressed"""
         self.pressed_dodge = True
 
     
     def dodge(self) -> bool:
+        """Does all the logistics regarding the dodge mechanic."""
+
         play_time = MIN_PLAY_TIME + (random() * (MAX_PLAY_TIME - MIN_PLAY_TIME))
         success = False
         sound = self.sounds["sonidoAtaque"]
@@ -116,21 +124,23 @@ class Game:
                 if time.time() - start_time > play_time and not sound_played:
                     sound_played = True
                     sound_time = time.time()
+                    sound.set_gain(0.7)
                     sound.play()
             pressed_time = time.time()
             listener.stop()
         
         if not sound_played:
-            print("Demasiado rápido")
+            self.slow_print("Demasiado rápido", mods=Fore.YELLOW)
         elif pressed_time - sound_time <= VALID_DODGE_TIME:
-            print("Perfecto")
+            self.slow_print("Perfecto", mods=Fore.GREEN)
             success = True
         else:
-            print("Demasiado tarde")
+            self.slow_print("Demasiado tarde", mods=Fore.YELLOW)
 
         return success
 
     def slow_stop(self, sound_key: str, fade_time = 1.0) -> None:
+        """Slowly stops a sound with a fade over a specified time"""
         sound = self.sounds[sound_key]
         og_vol = sound.gain #original volume
         if sound.get_state() == AL_PLAYING:
@@ -144,25 +154,33 @@ class Game:
             self.sounds[sound_key].set_looping(False)
             sound.set_gain(og_vol)
             self.sounds[sound_key].stop()
+
+
+    def stop_all_sounds(self):
+        """Stops all sounds"""
+        for key in self.sounds:
+            self.slow_stop(key)
                 
                 
     def battle(self, enemy_key: str) -> bool:
+        """Handles both the player's and the enemy's turn"""
         enemy = self.enemies[enemy_key]
-        #self.sounds[enemy.entry_track].play()
+        
         victory = False
         question = "¿Cuál es tu movimiento?"
         options = ["Insultar", "Chiste", "Suplicar", "Nada"]
         
-        self.slow_print(f"{self.player.name} vs {enemy.name}")
+        self.slow_print(f"{self.player.name}", "", mods=Fore.LIGHTBLUE_EX)
+        self.slow_print(f" vs ", "")
+        self.slow_print(f"{enemy.name}", mods=Fore.LIGHTRED_EX)
 
-        if (self.sounds[enemy.entry_track].get_state() == AL_PLAYING):
-            self.slow_stop(enemy.entry_track, 0.5)
+        self.stop_all_sounds()
         
         self.sounds[enemy.fight_track].set_looping(True)
         self.sounds[enemy.fight_track].play()
             
         while self.player.hp > 0 and not victory:
-            self.slow_print(f"\nVida {self.player.hp}/{self.player.max_hp}")
+            self.slow_print(f"\nVida {self.player.hp}/{self.player.max_hp}", mods=Fore.RED)
             opc = self.option_menu(question, options, [420])
 
             if opc == 0:
@@ -209,7 +227,7 @@ class Game:
 
             self.slow_print("Presiona ESPACIO cuando suene el ataque.\nPresiona Enter cuando estes listo ...")
             input()
-            print("ATENTO!")
+            self.slow_print("ATENTO!", delay=0, mods=Back.YELLOW)
             success = self.dodge()
             if not success:
                 self.player.hp -= 1
@@ -218,8 +236,7 @@ class Game:
                     self.slow_print("Te mataron, mucha loca no sabe pelear")
 
 
-        if self.sounds[enemy.fight_track].get_state() == AL_PLAYING:
-            self.slow_stop(enemy.fight_track)
+        self.slow_stop(enemy.fight_track)
 
         enemy.cringe = 0
 
@@ -227,6 +244,9 @@ class Game:
 
 
     def game_loop(self) -> None:
+        """Main function of the class, handles the game loop"""
+        
+        self.slow_print("========================")
         victory = False
         new_room = True
         while self.player.hp > 0 and not victory:
@@ -238,11 +258,9 @@ class Game:
                 break
 
             options = self.rooms[self.current_room].menu_text
-            opc = self.option_menu("¿Qué deseas hacer?", options)
+            opc = self.option_menu("\n¿Qué deseas hacer?", options)
 
             action = self.rooms[self.current_room].menu_action[opc]
-            #print(action)
-            
             
             if action[0] == RoomAction.NOTYPE.name:
                 print("Nothing")

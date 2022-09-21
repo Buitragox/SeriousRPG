@@ -14,11 +14,15 @@ Curso: Sistemas de Interacción
 
 1. Tener Python 3 
     - Este juego fue probado en python 3.9, otras versiones podrían no funcionar
+
 2. Tener el modulo pynput
    - Instalación: 'pip install pynput'
  
 3. Tener el modulo PyOpenAL
    - Instalación: 'pip install PyOpenAL'
+
+4. Tener el modulo Colorama
+   - Instalación: 'pip install Colorama'
   
 Nota: Este juego fue probado en Windows 10, otros sistemas operativos podrían no funcionar.
 
