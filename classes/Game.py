@@ -267,7 +267,7 @@ class Game:
                 self.play_story(self.current_room)
                 new_room = False
 
-            if self.rooms[self.current_room].name == "victoria":
+            if self.rooms[self.current_room].name == "Victoria":
                 break
 
             options = self.rooms[self.current_room].menu_text
